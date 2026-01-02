@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 50px;
+    font-family: sans-serif;
+    color: rgb(21, 240, 211);
+}
+body {
+    text-align: center;
+    background: #161E54;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 60vh;
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide-container {
+    display: none;
+}
+
+.game {
+    height: 50vh;
+    width: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.6vh;
+}
+.box {
+    height: 15vh;
+    width: 15vh;
+    background-color: #79C9C5;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    font-weight: 600;
+    color: #1C4D8D;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(16, 61, 67) ;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px rgb(16, 61, 67) ;  
+}
+
+#resetBtn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(22, 122, 136);
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(16, 61, 67) ;
+
+}
+
+#resetBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px rgb(16, 61, 67) ; 
+    background-color: #BDE8F5;
+    color: #4988C4; 
+
+}
+
+.hide-resetBtn {
+    display: none;
+}
+
+.msg-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.msg-Container::after {
+    content: "Thanks Meraj";
+    color: white;
+    margin-top: 20px;
+    margin-left: 25px;
+    font-size: 25px;
+
+
+}
+.hide {
+    display: none;
+}
+
+#msg {
+    font-size: 30px;
+    font-weight: bold;
+    color: wheat;
+    border: none;
+    margin: 20px 0 20px 0;
+}
+
+.playAgain-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(22, 122, 136);
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(16, 61, 67) ;
+    margin-left: 20px;
+}
+
+
+.playAgain-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px rgb(16, 61, 67) ; 
+    background-color: #BDE8F5;
+    color: #4988C4; 
+
+}
+
+
+@media (max-width: 450px) {
+    .game{
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .box {
+        height: 12vh;
+        width: 12vh;
+    }
+
+    .msg-Container {
+        margin-top: 50px;
+    }
+}
+
+
