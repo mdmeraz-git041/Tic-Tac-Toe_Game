@@ -1,9 +1,27 @@
+let mainContainer = document.querySelector(".main-container");
 let container = document.querySelector(".container");
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#resetBtn");
 let playAgainBtn = document.querySelector(".playAgain-btn");
 let msgContainer = document.querySelector(".msg-Container");
 let msg = document.querySelector("#msg");
+
+//for input-box 
+let form = document.querySelector(".player");
+let playerName1 = document.querySelector("#p1");
+let playerName2 = document.querySelector("#p2");
+let startBtn = document.querySelector("#start-btn");
+
+let Name1 = "";
+let Name2 = "";
+
+
+
+
+
+
+
+
 
 let turnO = true; //player"X" and player"O"
 
@@ -18,6 +36,11 @@ const winPattern = [
     [3, 4, 5],
     [6, 7, 8],
 ];
+
+const startGame = () => {
+    mainContainer.classList.remove("main-container");
+    form.classList.add("remove-form");
+}
 
 const resetGame = () => {
     turnO = true;
@@ -81,5 +104,6 @@ const checkWinner = () => {
     }
 }
 
+startBtn.addEventListener("click", startGame)
 playAgainBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);

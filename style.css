@@ -4,19 +4,26 @@
     box-sizing: border-box;
 }
 
-h1 {
-    margin-top: 50px;
-    font-size: 50px;
-    font-family: sans-serif;
-    color: rgb(21, 240, 211);
-}
 body {
+    height: 100vh;
     text-align: center;
     background: #161E54;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.main-container {
+    display: none;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 50px;
+    font-family: sans-serif;
+    color: rgb(21, 240, 211);
+}
+
 
 .container {
     height: 60vh;
@@ -134,6 +141,80 @@ body {
     color: #4988C4; 
 
 }
+
+/* Name input-box by Players */
+.remove-form {
+    display: none;
+}
+
+.player {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+            background: rgb(133, 18, 240);
+            border-radius: 10px;
+            color: white;
+            font-family: sans-serif;
+            
+        }
+        form h3{
+            margin: 0;
+
+        }
+
+        form h2 {
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            width: 100%;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        input {
+            width: 65%;
+            padding: 8px 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            text-transform: capitalize;
+            border: 1px solid blueviolet;
+        }
+
+
+        input:hover {
+            transform: scale(1.02);
+            box-shadow: 5px 5px 20px grey;
+            
+        }
+
+        input::placeholder {
+            font-size: 16px;
+        }
+
+        #start-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+             transition: 0.3s;
+            cursor: pointer;
+            background-color: rgb(33, 183, 183);
+            color: rgb(251, 254, 252);
+            margin-top: 10px;
+
+        }
+        #start-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 20px grey;
+            
+        }
 
 
 @media (max-width: 450px) {
