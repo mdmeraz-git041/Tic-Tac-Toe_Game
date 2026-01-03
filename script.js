@@ -7,7 +7,7 @@ let msgContainer = document.querySelector(".msg-Container");
 let msg = document.querySelector("#msg");
 
 //for input-box 
-let form = document.querySelector(".player");
+let userForm = document.querySelector(".player");
 let playerName1 = document.querySelector("#p1");
 let playerName2 = document.querySelector("#p2");
 let startBtn = document.querySelector("#start-btn");
@@ -37,9 +37,10 @@ const winPattern = [
     [6, 7, 8],
 ];
 
-const startGame = () => {
+let startGame = () => {
     mainContainer.classList.remove("main-container");
-    form.classList.add("remove-form");
+    userForm.classList.add("remove-userForm");
+    
 }
 
 const resetGame = () => {
@@ -104,6 +105,6 @@ const checkWinner = () => {
     }
 }
 
-startBtn.addEventListener("click", startGame)
+startBtn.addEventListener("click", startGame);
 playAgainBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
