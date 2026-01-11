@@ -15,11 +15,11 @@
             <h2>Enter players name</h2>
             <div class="player1 input-box">
                 <label for="p1">Player1</label>
-                <input id="p1" type="text" placeholder="Ex-Ajaz">
+                <input id="p1" type="text" placeholder="Ex-Ajaz" required>
             </div>
             <div class="player2 input-box">
                 <label for="p2">Player2</label>
-                <input id="p2" type="text" placeholder="Ex-Faiyaz">
+                <input id="p2" type="text" placeholder="Ex-Faiyaz" required>
             </div>
             <button id="start-btn">Start Game</button>
         </div>
@@ -27,6 +27,10 @@
 
     <main class="main main-container">
         <h1>Tic Toc Toe</h1>
+        <div class="player-name">
+            <span>Player 1 : <span id="name1" class="name"> (O)</span></span>
+            <span>Player 2 : <span id="name2" class="name"> (X)</span></span>
+        </div>
         <div class="msg-Container hide">
             <p id="msg">Congratulations</p>
             <button class="playAgain-btn hide-playBtn">Play Again</button>

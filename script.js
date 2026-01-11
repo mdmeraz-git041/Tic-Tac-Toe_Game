@@ -1,10 +1,11 @@
-let mainContainer = document.querySelector(".main-container");
+let mainContainer = document.querySelector(".main");
 let container = document.querySelector(".container");
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#resetBtn");
 let playAgainBtn = document.querySelector(".playAgain-btn");
 let msgContainer = document.querySelector(".msg-Container");
 let msg = document.querySelector("#msg");
+let playerContainer = document.querySelector(".player-name")
 
 //for input-box 
 let playerForm = document.querySelector(".player");
@@ -12,8 +13,10 @@ let playerName1 = document.querySelector("#p1");
 let playerName2 = document.querySelector("#p2");
 let startBtn = document.querySelector("#start-btn");
 
-let Name1 = "";
-let Name2 = "";
+
+
+let Name1 = document.getElementById("name1");
+let Name2 = document.getElementById("name2");
 
 
 
@@ -38,8 +41,10 @@ const winPattern = [
 ];
 
 let startGame = () => {
-    mainContainer.classList.remove("main-container");
+    mainContainer.classList.add("open-mainContainer");
     playerForm.classList.add("remove-userForm");
+    Name1.innerText = playerName1.value;
+    Name2.innerText = playerName2.value;
     
 }
 
@@ -49,6 +54,7 @@ const resetGame = () => {
     msgContainer.classList.add("hide");
     container.classList.remove("hide-container");
     resetBtn.classList.remove("hide-resetBtn");
+    playerContainer.classList.remove("hide-playerName");
 }
 
 boxes.forEach((box) => {
@@ -74,6 +80,8 @@ const showWinner = (winner) => {
     msgContainer.classList.remove("hide");
     container.classList.add("hide-container");
     resetBtn.classList.add("hide-resetBtn");
+    playerContainer.classList.add("hide-playerName");
+
 
 }
 
@@ -108,3 +116,5 @@ const checkWinner = () => {
 startBtn.addEventListener("click", startGame);
 playAgainBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
+
+console.log(playerName1.innerText)
