@@ -3,9 +3,12 @@ let container = document.querySelector(".container");
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#resetBtn");
 let playAgainBtn = document.querySelector(".playAgain-btn");
+let newGameBtn = document.querySelector("#new-game");
 let msgContainer = document.querySelector(".msg-Container");
-let msg = document.querySelector("#msg");
 let playerContainer = document.querySelector(".player-name")
+
+let winnerName = document.querySelector(".winner-name");
+let loserName = document.querySelector(".loser-name");
 
 //for input-box 
 let playerForm = document.querySelector(".player");
@@ -17,13 +20,6 @@ let startBtn = document.querySelector("#start-btn");
 
 let Name1 = document.getElementById("name1");
 let Name2 = document.getElementById("name2");
-
-
-
-
-
-
-
 
 
 let turnO = true; //player"X" and player"O"
@@ -45,7 +41,18 @@ let startGame = () => {
     playerForm.classList.add("remove-userForm");
     Name1.innerText = playerName1.value;
     Name2.innerText = playerName2.value;
-    
+
+}
+
+const startNewGame = () => {
+    turnO = true;
+    enabledBoxes();
+    msgContainer.classList.add("hide");
+    container.classList.remove("hide-container");
+    resetBtn.classList.remove("hide-resetBtn");
+    playerContainer.classList.remove("hide-playerName");
+    mainContainer.classList.remove("open-mainContainer");
+    playerForm.classList.remove("remove-userForm");
 }
 
 const resetGame = () => {
@@ -75,8 +82,17 @@ boxes.forEach((box) => {
 });
 
 
-const showWinner = (winner) => {
-    msg.innerText = `Congratulation, Winner is ${winner}!`;
+let showWinner = (winner) => {     
+     if(winner == "O") {
+        winner = playerName1.value;
+        loserName.innerText = playerName2.value;
+    }
+    else {
+        winner = playerName2.value;
+        loserName.innerText = playerName1.value;
+    };
+
+    winnerName.innerText = winner;
     msgContainer.classList.remove("hide");
     container.classList.add("hide-container");
     resetBtn.classList.add("hide-resetBtn");
@@ -86,13 +102,13 @@ const showWinner = (winner) => {
 }
 
 const disabledBoxes = () => {
-    for(let box of boxes) {
+    for (let box of boxes) {
         box.disabled = true;
     }
 }
 
 const enabledBoxes = () => {
-    for(let box of boxes) {
+    for (let box of boxes) {
         box.disabled = false;
         box.innerText = "";
     }
@@ -104,7 +120,7 @@ const checkWinner = () => {
         let pos2Val = boxes[pattern[1]].innerText;
         let pos3Val = boxes[pattern[2]].innerText;
 
-        if(pos1Val != "" && pos2Val != "" && pos3Val != "") {
+        if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
             if (pos1Val === pos2Val && pos2Val === pos3Val) {
                 disabledBoxes();
                 showWinner(pos1Val);
@@ -116,5 +132,4 @@ const checkWinner = () => {
 startBtn.addEventListener("click", startGame);
 playAgainBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
-
-console.log(playerName1.innerText)
+newGameBtn.addEventListener("click", startNewGame);
